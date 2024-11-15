@@ -1,7 +1,40 @@
 # OOP-1
 
-## Rouge-like
+## Battle Card Game
 
-El propósito de este proyecto es utilizar los conceptos de la programación orientada a objetos para crear un pequeño juego rougelike. El juego consistirá de cuatro encuentros con enemigos, y usando una progreción muy simple el jugador podrá ir avanzando y mejorando su personaje para poder deerrotar a los cuatro personajes. Para esto se utilzarán clases para poder abstraer las características del jugador y los enemigos, y en baso a eso poder simplificar el programa. 
+Este es un juego de cartas sencillo para dos jugadores, donde cada jugador toma el rol de un **Atacante** o **Defensor**. Cada jugador utiliza un mazo compuesto por cartas básicas y cartas especiales que determinan sus acciones durante el turno. El objetivo es reducir los puntos de vida del oponente a 0 utilizando estrategias basadas en las habilidades únicas de cada rol.
 
-Actualmente el programa es muy simple, por lo que al ejecutarlo solo mostrará los stats básicos del jugador, y mostrará los stats de tres posibles enemigos (no oficiales) para demostrar la funcionalidad de los objetos. 
+Este proyecto fue desarrollado como parte de una práctica de programación orientada a objetos, haciendo uso de **herencia**, **composición** y **agregación**.
+
+## Funcionalidad
+
+- **Roles Únicos**:
+    - **Atacante**: Enfocado en infligir daño con cartas de ataque y movimientos especiales.
+    - **Defensor**: Capaz de absorber daño y recuperar puntos de vida.
+- **Cartas y Mazos**: 
+    - Cada jugador tiene un mazo básico (cartas compartidas) y un mazo especial (cartas únicas según su rol).
+- **Dinámica del Juego**: 
+    - Los jugadores se turnan para jugar una carta y decidir cómo usar sus habilidades.
+    - Las reglas del juego permiten acciones como atacar, defender, o curarse según el rol del jugador y las cartas disponibles.
+- **Condición de Victoria**:
+    - El primer jugador en reducir los puntos de vida de su oponente a 0 gana.
+
+## Instrucciones para ejecutar el programa
+
+1. **Requisitos previos**: 
+    - Un compilador de C++ (como g++).
+2. **Clonar el repositoria**:
+    ```bash
+    git clone <URL-del-repositorio>
+    cd <nombre-del-repositorio>
+    ```
+3. **Compilar el Programa**:
+    Ejecuta el siguiente comando en la terminal:
+    ```bash
+    g++ -o juego main.cpp
+    ```
+4. **Ejecutar el Programa**:
+    Una vez compilado, ejecuta el archivo generado:
+    ```bash
+    ./juego
+    ```

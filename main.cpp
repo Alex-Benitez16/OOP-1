@@ -178,6 +178,7 @@ int main() {
 
     while(bot1.get_health() > 0) {
         bot1.stats();
+        player.stats();
         int input = select_card(player);
         player.play_card(input, bot1);
         player.take_damage(bot1.attack());
@@ -189,5 +190,4 @@ int main() {
 
     print_cool("VICTORY");
     return 0;
-
 }

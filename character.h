@@ -1,3 +1,6 @@
+/*
+*   clase abstracta de personaje de la cual player y bot heredarán
+*/
 #ifndef CHARACTER
 #define CHARACTER
 
@@ -7,35 +10,77 @@
 
 using std::string;
 
+// Definición de la clase
 class Character{
-    private: 
+    protected: 
+        // Atributos protegidos para heredar
         string name;
         int health;
-        int energy;
-        Deck default_deck;
     public:
-        Character(): name(""), health(100), energy(100){};
-        Character(string n): name(n), health(100), energy(100){};
+        // Constructores
+        Character(): name(""), health(100){};
+        Character(string n): name(n), health(100){};
+        Character(string n, int num): name(n), health(num){};
 
+        // Getters
         string get_name();
         int get_health();
-        int get_energy();
-        Deck& get_default_deck();
 
-        void set_name(string n);
-        void set_health(int h);
-        void set_energy(int e);
+        // No se incluyen setters porque los valores se designan en el
+        // constructor y no se vuelven a modificar
 
+        // Métodos públicos
+        void take_damage(int damage);
+        void heal(int amount);
+        void stats();
 
 };
 
+/*
+*   getter name
+*   
+*   @param
+*   @return string: name
+*/
 string Character::get_name() { return name; }
-int Character::get_health() { return health; }
-int Character::get_energy() { return energy; }
-Deck& Character::get_default_deck() { return default_deck; }
 
-void Character::set_name(string n) { name = n; }
-void Character::set_health(int h) { health = h; }
-void Character::set_energy(int e) { energy = e; }
+/*
+*   getter health
+*   
+*   @param
+*   @return int: health
+*/
+int Character::get_health() { return health; }
+
+/*
+*   aplica daño a la vida del jugador
+*   
+*   @param int damage: daño
+*   @return
+*/
+void Character::take_damage(int damage) {
+    health -= damage;
+}
+
+/*
+*   cura, incrementa la vida
+*   
+*   @param int amount: cantidad de vida a aumentar
+*   @return
+*/
+void Character::heal(int amount) {
+    health += amount;
+}
+
+/*
+*   to string. imprime los atributos de la clase
+*   
+*   @param
+*   @return
+*/
+void Character::stats() {
+    std::cout << name << " stats: ";
+    std::cout << health << "hp";
+}
 
 #endif

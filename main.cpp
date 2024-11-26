@@ -195,7 +195,7 @@ int main() {
 
     print_cool("CONGRATULATIONS. You defeated " + bot1.get_name());
 
-    Bot bot2("GLaDOS", 10, 250);
+    Bot bot2("GLaDOS", 250, 10);
 
     while(bot2.get_health() > 0) {
         clear_scr();
@@ -214,7 +214,7 @@ int main() {
 
     print_cool("CONGRATULATIONS. You defeated " + bot2.get_name());
 
-    Bot bot3("Ornstein and Smough", 50, 300);
+    Bot bot3("Ornstein and Smough", 300, 50);
 
     while(bot3.get_health() > 0) {
         clear_scr();
@@ -234,7 +234,7 @@ int main() {
 
     print_cool("CONGRATULATIONS. You defeated " + bot3.get_name());
 
-    Bot bot4("Sans", 50, 1);
+    Bot bot4("Sans", 1, 50);
 
     while(bot4.get_health() > 0) {
         clear_scr();

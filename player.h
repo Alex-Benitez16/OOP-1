@@ -90,7 +90,7 @@ void Player::play_card(int n, Bot &bot) {
 */
 void Player::stats() {
     std::cout << name << " stats: ";
-    std::cout << health << "hp";
+    std::cout << health << ": hp ";
     std::cout << 100 - defense << "%";
     std::cout << "\n";
 }

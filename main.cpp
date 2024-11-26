@@ -106,17 +106,17 @@ int select_card(Player player) {
     std::cout << "\t3. " + player.get_deck().get_card(2).display(false) << "\n";
     std::cout << "\t4. " + player.get_deck().get_card(3).display(false) << "\n";
 
-    int input;
-    std::cin >> input;
-    while(input < 1 || input > 4) {
-        print_cool("Please select a valid option: ");
-        std::cin >> input;
+    while(true){
+    string input;
+    getline(std::cin, input);
+    if(input.size() == 1 && input[0] >= '1' && input[0] <= '4') {
+        return static_cast<int>(input[0]) - '0' - 1;
     }
-    return input - 1; // Se resta 1 para mapearlo a un arreglo
+    std::cout << "Please select a valid option: ";
+    }
 }
 
 int main() {
-
     // Arreglo del banco de cartas
     Card card_pool[15] = {
         Card("Fireball", Action::attack, 30, "Fire a powerful ball"),
@@ -176,17 +176,82 @@ int main() {
 
     print_cool("Your first opponent is " + bot1.get_name());
 
+    press_enter_to_continue();
+
     while(bot1.get_health() > 0) {
+        clear_scr();
         bot1.stats();
         player.stats();
         int input = select_card(player);
         player.play_card(input, bot1);
+        if(bot1.get_health() > 0) {
         player.take_damage(bot1.attack());
+        }
         if(player.get_health() <= 0) {
-            print_cool("GAME OVER");
+            print_cool("\nGAME OVER");
             return 0;
         }
     }
+
+    print_cool("CONGRATULATIONS. You defeated " + bot1.get_name());
+
+    Bot bot2("GLaDOS", 10, 250);
+
+    while(bot2.get_health() > 0) {
+        clear_scr();
+        bot2.stats();
+        player.stats();
+        int input = select_card(player);
+        player.play_card(input, bot2);
+        if(bot2.get_health() > 0) {
+            player.take_damage(bot2.attack());
+        }
+        if(player.get_health() <= 0) {
+            print_cool("\n GAME OVER");
+            return 0;
+        }
+    }
+
+    print_cool("CONGRATULATIONS. You defeated " + bot2.get_name());
+
+    Bot bot3("Ornstein and Smough", 50, 300);
+
+    while(bot3.get_health() > 0) {
+        clear_scr();
+        bot3.stats();
+        player.stats();
+        int input = select_card(player);
+        player.play_card(input, bot3);
+        if(bot2.get_health() > 0) {
+            player.take_damage(bot3.attack());
+        }
+        if(player.get_health() <= 0) {
+            print_cool("\n GAME OVER");
+            return 0;
+        }
+    }
+
+
+    print_cool("CONGRATULATIONS. You defeated " + bot3.get_name());
+
+    Bot bot4("Sans", 50, 1);
+
+    while(bot4.get_health() > 0) {
+        clear_scr();
+        bot4.stats();
+        player.stats();
+        int input = select_card(player);
+        player.play_card(input, bot4);
+        if(bot2.get_health() > 0) {
+            player.take_damage(bot4.attack());
+        }
+        if(player.get_health() <= 0) {
+            print_cool("\n GAME OVER");
+            return 0;
+        }
+    }
+
+    print_cool("CONGRATULATIONS. You defeated " + bot4.get_name());
 
     print_cool("VICTORY");
     return 0;

@@ -2,22 +2,13 @@
 
 ## Battle Card Game
 
-Este es un juego de cartas sencillo para dos jugadores, donde cada jugador toma el rol de un **Atacante** o **Defensor**. Cada jugador utiliza un mazo compuesto por cartas básicas y cartas especiales que determinan sus acciones durante el turno. El objetivo es reducir los puntos de vida del oponente a 0 utilizando estrategias basadas en las habilidades únicas de cada rol.
+Es un juego de cartas sencillo. El jugador inicia con un mazo aleatorio de cuatro cartas, y debe derrotar a cuatro enemigos predeterminados usando sus habilidades de gamer utilizando el mazo asignado. 
 
 Este proyecto fue desarrollado como parte de una práctica de programación orientada a objetos, haciendo uso de **herencia**, **composición** y **agregación**.
 
 ## Funcionalidad
 
-- **Roles Únicos**:
-    - **Atacante**: Enfocado en infligir daño con cartas de ataque y movimientos especiales.
-    - **Defensor**: Capaz de absorber daño y recuperar puntos de vida.
-- **Cartas y Mazos**: 
-    - Cada jugador tiene un mazo básico (cartas compartidas) y un mazo especial (cartas únicas según su rol).
-- **Dinámica del Juego**: 
-    - Los jugadores se turnan para jugar una carta y decidir cómo usar sus habilidades.
-    - Las reglas del juego permiten acciones como atacar, defender, o curarse según el rol del jugador y las cartas disponibles.
-- **Condición de Victoria**:
-    - El primer jugador en reducir los puntos de vida de su oponente a 0 gana.
+El jugador se enfrenta a cuatro bots distintos, cada uno presentando un reto específico. 
 
 ## Instrucciones para ejecutar el programa
 
